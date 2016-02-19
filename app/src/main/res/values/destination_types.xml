@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <string-array name="destination_types">
+            <item>Destination</item>
+            <item>Canada</item>
+            <item>USA</item>
+            <item>International</item>
+        </string-array>
+    </resources>

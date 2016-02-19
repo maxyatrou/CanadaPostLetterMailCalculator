@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="typeofitem_types">
+        <item>Type of item</item>
+        <item>Stamp(s)</item>
+        <item>Meter or Postal Indicia</item>
+    </string-array>
+</resources>
