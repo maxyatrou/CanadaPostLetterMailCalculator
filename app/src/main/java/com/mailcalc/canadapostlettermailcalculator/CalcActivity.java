@@ -179,4 +179,8 @@ public class CalcActivity extends AppCompatActivity implements CalcView {
         errorText.setTextColor(Color.RED);
         errorText.setText(getString(resId));
     }
+
+    public String getWeightError() {
+        return weightTextView.getError().toString();
+    }
 }

@@ -60,14 +60,17 @@ public class CalcPresenter {
 
         if(lengthValue < 140 || lengthValue > 380) {
             view.showLengthError(R.string.length_outofbounds);
+            dontCalc = true;
         }
 
         if(widthValue < 90 || widthValue > 270) {
             view.showWidthError(R.string.width_outofbounds);
+            dontCalc = true;
         }
 
         if(thicknessValue < 0.18 || thicknessValue > 20) {
             view.showThicknessError(R.string.thickness_outofbounds);
+            dontCalc = true;
         }
 
         if(dontCalc) {
