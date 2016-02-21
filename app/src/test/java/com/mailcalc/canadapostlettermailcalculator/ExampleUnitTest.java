@@ -32,12 +32,12 @@ public class ExampleUnitTest {
     @Test
     public void errorWhenWeightEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
-        when(view.getDestination()).thenReturn("");
+        when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
         when(view.getThickness()).thenReturn("");
         when(view.getWeightError()).thenReturn("");
         when(view.getWidth()).thenReturn("");
-        when(view.getTypeOfItem()).thenReturn("");
+        when(view.getTypeOfItem()).thenReturn("Type of item");
         presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
         verify(view).showWeightError(R.string.weight_empty);
     }
@@ -45,11 +45,11 @@ public class ExampleUnitTest {
     @Test
     public void errorWhenLengthEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
-        when(view.getDestination()).thenReturn("");
+        when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
         when(view.getThickness()).thenReturn("");
         when(view.getWidth()).thenReturn("");
-        when(view.getTypeOfItem()).thenReturn("");
+        when(view.getTypeOfItem()).thenReturn("Type of item");
         presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
         verify(view).showLengthError(R.string.length_empty);
     }
@@ -57,11 +57,11 @@ public class ExampleUnitTest {
     @Test
     public void errorWhenThicknessEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
-        when(view.getDestination()).thenReturn("");
+        when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
         when(view.getThickness()).thenReturn("");
         when(view.getWidth()).thenReturn("");
-        when(view.getTypeOfItem()).thenReturn("");
+        when(view.getTypeOfItem()).thenReturn("Type of item");
         presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
         verify(view).showThicknessError(R.string.thickness_empty);
     }
@@ -69,11 +69,11 @@ public class ExampleUnitTest {
     @Test
     public void errorWhenWidthEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
-        when(view.getDestination()).thenReturn("");
+        when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
         when(view.getThickness()).thenReturn("");
         when(view.getWidth()).thenReturn("");
-        when(view.getTypeOfItem()).thenReturn("");
+        when(view.getTypeOfItem()).thenReturn("Type of item");
         presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
         verify(view).showWidthError(R.string.width_empty);
     }
@@ -81,13 +81,25 @@ public class ExampleUnitTest {
     @Test
     public void errorWhenDestinationEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
-        when(view.getDestination()).thenReturn("");
+        when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
         when(view.getThickness()).thenReturn("");
         when(view.getWidth()).thenReturn("");
-        when(view.getTypeOfItem()).thenReturn("");
+        when(view.getTypeOfItem()).thenReturn("Type of item");
         presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
         verify(view).showDestinationError(R.string.destination_empty);
+    }
+
+    @Test
+    public void errorWhenTypeEmpty () throws Exception{
+        when(view.getWeight()).thenReturn("");
+        when(view.getDestination()).thenReturn("Destination");
+        when(view.getLength()).thenReturn("");
+        when(view.getThickness()).thenReturn("");
+        when(view.getWidth()).thenReturn("");
+        when(view.getTypeOfItem()).thenReturn("Type of item");
+        presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
+        verify(view).showTypeOfItemError(R.string.typeofitem_empty);
     }
 
 
