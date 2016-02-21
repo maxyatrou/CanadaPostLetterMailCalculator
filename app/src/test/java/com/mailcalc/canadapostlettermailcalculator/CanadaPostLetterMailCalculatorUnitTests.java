@@ -1,8 +1,10 @@
 package com.mailcalc.canadapostlettermailcalculator;
 
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -13,9 +15,9 @@ import static org.mockito.Mockito.when;
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(MockitoJUnitRunner.class)
-public class ExampleUnitTest {
+public class CanadaPostLetterMailCalculatorUnitTests {
     @Mock
     private CalcView view;
     private CalcPresenter presenter;
@@ -26,7 +28,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void errorWhenWeightEmpty () throws Exception{
+    public void test01ErrorWhenWeightEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
         when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
@@ -38,7 +40,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void errorWhenLengthEmpty () throws Exception{
+    public void test02ErrorWhenLengthEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
         when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
@@ -50,7 +52,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void errorWhenThicknessEmpty () throws Exception{
+    public void test03ErrorWhenThicknessEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
         when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
@@ -62,7 +64,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void errorWhenWidthEmpty () throws Exception{
+    public void test04ErrorWhenWidthEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
         when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
@@ -74,7 +76,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void errorWhenDestinationEmpty () throws Exception{
+    public void test05ErrorWhenDestinationEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
         when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
@@ -86,7 +88,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void errorWhenTypeEmpty () throws Exception{
+    public void test06ErrorWhenTypeEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
         when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
@@ -98,7 +100,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void errorWhenWeightInvalid () throws Exception {
+    public void test07ErrorWhenWeightInvalid () throws Exception {
         when(view.getWeight()).thenReturn("0");
         when(view.getDestination()).thenReturn("Canada");
         when(view.getLength()).thenReturn("140");
@@ -110,7 +112,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void errorWhenLengthInvalid () throws Exception {
+    public void test08ErrorWhenLengthInvalid () throws Exception {
         when(view.getWeight()).thenReturn("5");
         when(view.getDestination()).thenReturn("Canada");
         when(view.getLength()).thenReturn("10");
@@ -122,7 +124,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void errorWhenThicknessInvalid() throws Exception {
+    public void test09ErrorWhenThicknessInvalid() throws Exception {
         when(view.getWeight()).thenReturn("5");
         when(view.getDestination()).thenReturn("Canada");
         when(view.getLength()).thenReturn("140");
@@ -134,7 +136,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void errorWhenWidthInvalid() throws Exception {
+    public void test10ErrorWhenWidthInvalid() throws Exception {
         when(view.getWeight()).thenReturn("5");
         when(view.getDestination()).thenReturn("Canada");
         when(view.getLength()).thenReturn("140");
@@ -146,7 +148,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void resultWhenCanadaStandardUpTo30gStamp() throws Exception {
+    public void test11ResultWhenCanadaStandardUpTo30gStamp() throws Exception {
         when(view.getWeight()).thenReturn("30");
         when(view.getDestination()).thenReturn("Canada");
         when(view.getLength()).thenReturn("140");
