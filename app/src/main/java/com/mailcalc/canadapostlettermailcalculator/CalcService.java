@@ -1,12 +1,17 @@
 package com.mailcalc.canadapostlettermailcalculator;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 /**
  * Created by Maxy on 2016-02-18.
  */
 public class CalcService {
-    public double calc(int weight, int length, int width, double thickness, String destination, String typeOfItem) {
-        boolean Standard = (weight >= 2 && weight <= 50) && (length >= 140 && length <= 156) && (width >= 90 && width <= 156) && (thickness >= 0.18 && thickness <= 5);
+    public String calc(int weight, int length, int width, double thickness, String destination, String typeOfItem) {
         double result = 0;
+        boolean Standard = (weight >= 2 && weight <= 50) && (length >= 140 && length <= 156) && (width >= 90 && width <= 156) && (thickness >= 0.18 && thickness <= 5);
+        NumberFormat formatter = new DecimalFormat("#0.00");
+
         switch(destination) {
             case "Canada":
                 if(Standard) {
@@ -20,7 +25,7 @@ public class CalcService {
             case "International":
                 break;
         }
-        return result;
+        return formatter.format(result);
     }
 
     public double calcCanadaStandard(int weight, int length, int width, double thickness, String typeOfItem) {

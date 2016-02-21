@@ -145,9 +145,8 @@ public class ExampleUnitTest {
         verify(view).showWidthError(R.string.width_outofbounds);
     }
 
-
     @Test
-    public void resultCanadaStandardUpTo30gStamp() throws Exception {
+    public void resultWhenCanadaStandardUpTo30gStamp() throws Exception {
         when(view.getWeight()).thenReturn("30");
         when(view.getDestination()).thenReturn("Canada");
         when(view.getLength()).thenReturn("140");
@@ -155,7 +154,7 @@ public class ExampleUnitTest {
         when(view.getWidth()).thenReturn("100");
         when(view.getTypeOfItem()).thenReturn("Stamp(s)");
         presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
-        verify(view).setResult("0.85");
+        verify(view).setResult("$0.85");
     }
 
 }

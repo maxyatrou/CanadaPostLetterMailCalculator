@@ -85,8 +85,7 @@ public class CalcPresenter {
             int widthValue = Integer.parseInt(width);
             double thicknessValue = Double.parseDouble(thickness);
 
-            double calcRate = service.calc(weightValue, lengthValue, widthValue, thicknessValue, destination, typeOfItem);
-            String result = String.valueOf(calcRate);
+            String result = "$" + service.calc(weightValue, lengthValue, widthValue, thicknessValue, destination, typeOfItem);
 
             view.setResult(result);
         }
