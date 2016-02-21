@@ -52,19 +52,7 @@ public class CanadaPostLetterMailCalculatorUnitTests {
     }
 
     @Test
-    public void test03ErrorWhenThicknessEmpty () throws Exception{
-        when(view.getWeight()).thenReturn("");
-        when(view.getDestination()).thenReturn("Destination");
-        when(view.getLength()).thenReturn("");
-        when(view.getThickness()).thenReturn("");
-        when(view.getWidth()).thenReturn("");
-        when(view.getTypeOfItem()).thenReturn("Type of item");
-        presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
-        verify(view).showThicknessError(R.string.thickness_empty);
-    }
-
-    @Test
-    public void test04ErrorWhenWidthEmpty () throws Exception{
+    public void test03ErrorWhenWidthEmpty () throws Exception{
         when(view.getWeight()).thenReturn("");
         when(view.getDestination()).thenReturn("Destination");
         when(view.getLength()).thenReturn("");
@@ -73,6 +61,18 @@ public class CanadaPostLetterMailCalculatorUnitTests {
         when(view.getTypeOfItem()).thenReturn("Type of item");
         presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
         verify(view).showWidthError(R.string.width_empty);
+    }
+
+    @Test
+    public void test04ErrorWhenThicknessEmpty () throws Exception{
+        when(view.getWeight()).thenReturn("");
+        when(view.getDestination()).thenReturn("Destination");
+        when(view.getLength()).thenReturn("");
+        when(view.getThickness()).thenReturn("");
+        when(view.getWidth()).thenReturn("");
+        when(view.getTypeOfItem()).thenReturn("Type of item");
+        presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
+        verify(view).showThicknessError(R.string.thickness_empty);
     }
 
     @Test
@@ -124,19 +124,7 @@ public class CanadaPostLetterMailCalculatorUnitTests {
     }
 
     @Test
-    public void test09ErrorWhenThicknessInvalid() throws Exception {
-        when(view.getWeight()).thenReturn("5");
-        when(view.getDestination()).thenReturn("Canada");
-        when(view.getLength()).thenReturn("140");
-        when(view.getThickness()).thenReturn("0.01");
-        when(view.getWidth()).thenReturn("90");
-        when(view.getTypeOfItem()).thenReturn("Stamp(s)");
-        presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
-        verify(view).showThicknessError(R.string.thickness_outofbounds);
-    }
-
-    @Test
-    public void test10ErrorWhenWidthInvalid() throws Exception {
+    public void test09ErrorWhenWidthInvalid() throws Exception {
         when(view.getWeight()).thenReturn("5");
         when(view.getDestination()).thenReturn("Canada");
         when(view.getLength()).thenReturn("140");
@@ -145,6 +133,18 @@ public class CanadaPostLetterMailCalculatorUnitTests {
         when(view.getTypeOfItem()).thenReturn("Stamp(s)");
         presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
         verify(view).showWidthError(R.string.width_outofbounds);
+    }
+
+    @Test
+    public void test10ErrorWhenThicknessInvalid() throws Exception {
+        when(view.getWeight()).thenReturn("5");
+        when(view.getDestination()).thenReturn("Canada");
+        when(view.getLength()).thenReturn("140");
+        when(view.getThickness()).thenReturn("0.01");
+        when(view.getWidth()).thenReturn("90");
+        when(view.getTypeOfItem()).thenReturn("Stamp(s)");
+        presenter.attemptCalc(view.getWeight(), view.getLength(), view.getWidth(), view.getThickness(), view.getDestination(), view.getTypeOfItem());
+        verify(view).showThicknessError(R.string.thickness_outofbounds);
     }
 
     @Test
