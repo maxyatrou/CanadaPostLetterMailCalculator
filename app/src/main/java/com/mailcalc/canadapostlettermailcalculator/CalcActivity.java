@@ -3,6 +3,7 @@ package com.mailcalc.canadapostlettermailcalculator;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,17 +24,18 @@ public class CalcActivity extends AppCompatActivity implements CalcView {
     private Spinner destinationSpinner;
     private Spinner typeOfItemSpinner;
     private Button calculateRateButton;
-    private TextView result;
+    private TextView resultTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc);
-        /*
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +58,7 @@ public class CalcActivity extends AppCompatActivity implements CalcView {
             }
         });
 
-        result = (TextView) findViewById(R.id.result);
+        resultTextView = (TextView) findViewById(R.id.result);
 
         presenter = new CalcPresenter(this);
 
@@ -66,11 +68,8 @@ public class CalcActivity extends AppCompatActivity implements CalcView {
     public void initializeInputs() {
 
         weightTextView = (EditText) findViewById(R.id.weightField);
-
         lengthTextView = (EditText) findViewById(R.id.lengthField);
-
         widthTextView = (EditText) findViewById(R.id.widthField);
-
         thicknessTextView = (EditText) findViewById(R.id.thicknessField);
 
     }
@@ -183,4 +182,6 @@ public class CalcActivity extends AppCompatActivity implements CalcView {
     public String getWeightError() {
         return weightTextView.getError().toString();
     }
+
+    public void setResult(String result) {resultTextView.setText(result); }
 }

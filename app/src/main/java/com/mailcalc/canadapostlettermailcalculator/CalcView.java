@@ -23,6 +23,6 @@ public interface CalcView {
     String getTypeOfItem();
     void showTypeOfItemError(int resId);
 
-    String getWeightError();
+    void setResult(String result);
 
 }
